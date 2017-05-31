@@ -27,7 +27,9 @@ urlpatterns = [
     url(r'^edit_sitio/id=(\d{1,2})', views.sitios_edit),
     url(r'^empleados_sitio/id=(\d{1,2})', views.empleados_sitio),
     url(r'^crear_sitio_form/', views.create_site_form),
-    url(r'^crear_sitio/', views.create_site),
-    url(r'^create_site/', views.sitios_edited),
+    url(r'^create_site/', views.create_site),
+    url(r'^updated_site/', views.sitios_edited),
     url(r'^delete_sitio/id=(\d{1,2})', views.sitios_delete),
+    url(r'^crear_empleado_form/id=(\d{1,2})', views.crear_empleado_sitio_form),
+    url(r'^create_employee/', views.crear_empleado_sitio),
 ]

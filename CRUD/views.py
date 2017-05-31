@@ -14,7 +14,24 @@ def create_site_form(request):
 
 def empleados_sitio(request, id):
     sitio = Sitio.objects.get(id=id)
-    return render_to_response('crud_employee_in_site_list.html', {'empleados': sitio.empleados.all()})
+    return render_to_response('crud_employee_in_site_list.html', {'sitio': sitio})
+
+def crear_empleado_sitio_form(request, id_sitio):
+    sitio = Sitio.objects.get(id=id_sitio)
+    return render_to_response('crud_create_employee.html',{'sitio':sitio})
+
+def crear_empleado_sitio(request):
+    sitio = Sitio.objects.get(id=request.GET['sitio_id'])
+    ename = request.GET['employee_name']
+    elast = request.GET['employee_last_name']
+    email = request.GET['employee_email']
+    enum = request.GET['employee_phoenumber']
+    employee = Empleado(nombre=ename,apellidos=elast,telefono=enum, correo=email)
+    employee.save()
+    sitio.empleados.add(employee)
+    sitio.save()
+    return render_to_response('redirect_sites.html')
+
 
 def sitios_edit(request, id):
     sitio = Sitio.objects.get(id=id)
