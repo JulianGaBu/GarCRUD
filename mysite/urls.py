@@ -28,4 +28,6 @@ urlpatterns = [
     url(r'^empleados_sitio/id=(\d{1,2})', views.empleados_sitio),
     url(r'^crear_sitio_form/', views.create_site_form),
     url(r'^crear_sitio/', views.create_site),
+    url(r'^create_site/', views.sitios_edited),
+    url(r'^delete_sitio/id=(\d{1,2})', views.sitios_delete),
 ]
