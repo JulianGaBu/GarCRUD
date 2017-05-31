@@ -2,7 +2,7 @@
 {% block title %}Registrar un site{% endblock %}
 {% block pagetitle %}A&ntilde;adir un site{% endblock %}
 {% block body %}
-<form data-abide novalidate action="/create_site/" method="get">
+<form data-abide novalidate action="{% block action %}/create_site/{% endblock %}" method="get">
 
 <div class="row">
   <div class="small-2 columns">&nbsp;</div>

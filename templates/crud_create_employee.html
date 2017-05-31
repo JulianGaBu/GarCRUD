@@ -2,7 +2,7 @@
 {% block title %}Registrar un empleado{% endblock %}
 {% block pagetitle %}A&ntilde;adir un empleado{% endblock %}
 {% block body %}
-<form data-abide novalidate action="/create_employee/" method="get">
+<form data-abide novalidate action="{% block action %}/create_employee/{% endblock %}" method="get">
 
 <div class="row">
   <div class="small-2 columns">&nbsp;</div>

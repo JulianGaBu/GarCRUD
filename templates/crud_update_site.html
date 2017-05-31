@@ -1,6 +1,7 @@
 {% extends "crud_create_site.html" %}
 {% block title %}Registrar un site{% endblock %}
 {% block pagetitle %}A&ntilde;adir un site{% endblock %}
+{% block action %}/updated_site/{% endblock %}
 {% block name %} {{sitio.nombre}} {% endblock %}
 {% block dir %} {{sitio.direccion}} {% endblock %}
 {% block id %} <input name="site_id" type="hidden" value="{{sitio.id}}"/> {% endblock %}
