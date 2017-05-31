@@ -24,7 +24,7 @@ def sitios_delete(request, id):
     sitio = Sitio.objects.get(id=id)
     sitio.delete()
     #todo change response
-    return render_to_response('crud_update_site.html', {'sitio':sitio})
+    return render_to_response('redirect_sites.html')
 
 def sitios_edited(request):
     sitio = Sitio.objects.get(id=request.GET['site_id'])
@@ -32,7 +32,7 @@ def sitios_edited(request):
     sitio.direccion = request.GET['site_dir']
     sitio.save()
     #todo change response
-    return HttpResponse("rip")
+    return render_to_response('redirect_sites.html')
 
 
 def create_site(request):
@@ -42,4 +42,4 @@ def create_site(request):
         site = Sitio(nombre=site_name, direccion=site_dir)
         site.save()
     #todo js response
-    return render_to_response('crud_site_list.html')
+    return render_to_response('redirect_sites.html')
