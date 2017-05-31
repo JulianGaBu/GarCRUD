@@ -14,6 +14,7 @@ class Empleado(models.Model):
 class Sitio(models.Model):
     nombre = models.CharField(max_length=30)
     direccion = models.CharField(max_length=50)
+    empleados = models.ManyToManyField(Empleado)
 
     def __str__(self):
         return self.nombre

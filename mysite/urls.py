@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^sitios/', views.view_sitios),
     url(r'^sitios-edit/', views.sitios_edit),
+    url(r'^empleados_sitio/', views.empleados_sitio),
 ]
