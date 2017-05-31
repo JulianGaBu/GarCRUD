@@ -19,7 +19,7 @@
 <div class="row">
   <div class="small-12 columns">
     <label>Nombre
-      <input name="employee_name" type="text" placeholder="Juan" required>
+      <input name="employee_name" type="text" placeholder="Juan" required value="{% block name %}{% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
@@ -28,7 +28,7 @@
 
   <div class="small-12 columns">
     <label>Apellidos
-      <input name="employee_last_name" type="text" placeholder="Garcilazo" required>
+      <input name="employee_last_name" type="text" placeholder="Garcilazo" required value="{% block lastname %}{% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
@@ -37,7 +37,7 @@
 
   <div class="small-12 columns">
     <label>Email
-      <input name="employee_email" type="text" placeholder="jgarcilazo@walook.com.mx" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+      <input name="employee_email" type="text" placeholder="jgarcilazo@walook.com.mx" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" value="{% block email %}{% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
@@ -46,7 +46,7 @@
 
   <div class="small-12 columns">
     <label>Tel&eacute;fono
-      <input name="employee_phoenumber" type="text" placeholder="999124567" required pattern="number">
+      <input name="employee_phoenumber" type="text" placeholder="999124567" required pattern="number" value="{% block phonenumber %}{% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
