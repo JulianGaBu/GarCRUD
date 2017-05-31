@@ -5,3 +5,4 @@
 {% block lastname %} {{empleado.apellidos}} {% endblock %}
 {% block email %} {{empleado.correo}} {% endblock %}
 {% block phonenumber %} {{empleado.telefono}} {% endblock %}
+{% block id %} <input name="site_id" type="hidden" value="{{empleado.id}}"/> {% endblock %}
