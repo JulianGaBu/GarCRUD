@@ -16,13 +16,14 @@ def empleados_sitio(request, id):
     sitio = Sitio.objects.get(id=id)
     return render_to_response('crud_employee_in_site_list.html', {'empleados': sitio.empleados.all()})
 
+def sitios_edit(request, id):
+    sitio = Sitio.objects.get(id=id)
+    return render_to_response('crud_update_site.html', {'sitio':sitio})
 
-def sitios_edit(request):
-    if 'NOMBRE CAMPO' in request.GET:
-        message = 'hola g g g'
-    else:
-        message = 'uwu'
-    return HttpResponse(message)
+def sitios_edited(request):
+    if 'id' in request.GET:
+        sitio = Sitio.objects.get(id=request.GET['id'])
+
 
 
 def create_site(request):
