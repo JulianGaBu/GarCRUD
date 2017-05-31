@@ -2,7 +2,12 @@
 {% block title %}Empleados de {{ site_name }}{% endblock %}
 {% block pagetitle %}Listado de empleados{% blockend %}
 {% block body %}
-<form data-abide novalidate action="/create_employee/">
+<form data-abide novalidate action="/create_employee/" method="get">
+
+<div class="row">
+  <div class="small-2 columns">&nbsp;</div>
+
+  <div class="small-10 columns">
 <div class="row">
   <div class="columns">
     <div data-abide-error class="alert callout" style="display: none;">
@@ -10,8 +15,8 @@
     </div>
   </div>
 </div>
-<div class="row">
 
+<div class="row">
   <div class="small-12 columns">
     <label>Nombre
       <input name="employee_name" type="text" placeholder="Juan" required>
@@ -47,8 +52,18 @@
       </span>
     </label>
   </div>
+</div>
 
-
+<div class="row">
+  <fieldset class="medium-6 columns">
+    <button class="button" type="submit" value="Aceptar">Submit</button>
+  </fieldset>
+  <fieldset class="medium-6 columns">
+    <button class="button" type="reset" value="Reset">Reset</button>
+  </fieldset>
+</div>
+</form>
+</div>
 </div>
 
 
