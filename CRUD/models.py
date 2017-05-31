@@ -10,6 +10,7 @@ class Empleado(models.Model):
     def __str__(self):
         return self.nombre + " " + self.apellidos
 
+
 class Sitio(models.Model):
     nombre = models.CharField(max_length=30)
     direccion = models.CharField(max_length=50)
