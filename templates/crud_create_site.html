@@ -1,8 +1,8 @@
 {% extends "crud_base.html" %}
-{% block title %}Registrar un empleado{% endblock %}
-{% block pagetitle %}A&ntilde;adir un empleado{% endblock %}
+{% block title %}Registrar un site{% endblock %}
+{% block pagetitle %}A&ntilde;adir un site{% endblock %}
 {% block body %}
-<form data-abide novalidate action="/create_employee/" method="get">
+<form data-abide novalidate action="/create_site/" method="get">
 
 <div class="row">
   <div class="small-2 columns">&nbsp;</div>
@@ -19,7 +19,7 @@
 <div class="row">
   <div class="small-12 columns">
     <label>Nombre
-      <input name="employee_name" type="text" placeholder="Juan" required>
+      <input name="site_name" type="text" placeholder="Walook" required>
       <span class="form-error">
         Campo requerido.
       </span>
@@ -27,32 +27,13 @@
   </div>
 
   <div class="small-12 columns">
-    <label>Apellidos
-      <input name="employee_last_name" type="text" placeholder="Garcilazo" required>
+    <label>Direcci&oacute;n
+      <input name="site_dir" type="text" placeholder="Calle 45b No 338 entre 44 y 46 Pensiones" required>
       <span class="form-error">
         Campo requerido.
       </span>
     </label>
   </div>
-
-  <div class="small-12 columns">
-    <label>Email
-      <input name="employee_email" type="text" placeholder="jgarcilazo@walook.com.mx" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-      <span class="form-error">
-        Campo requerido.
-      </span>
-    </label>
-  </div>
-
-  <div class="small-12 columns">
-    <label>Tel&eacute;fono
-      <input name="employee_phoenumber" type="text" placeholder="999124567" required pattern="number">
-      <span class="form-error">
-        Campo requerido.
-      </span>
-    </label>
-  </div>
-</div>
 
 <div class="row">
   <fieldset class="medium-6 columns">
@@ -65,6 +46,4 @@
 </form>
 </div>
 </div>
-
-
 {% endblock %}
