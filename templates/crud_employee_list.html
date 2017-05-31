@@ -1,0 +1,33 @@
+{% extends "crud_base.html" %}
+{% block title %}Empleados{% endblock %}
+{% block pagetitle %}Listado de Empleados{% endblock %}
+{% block body %}
+<div class="small-2 columns"> &nbsp; </div>
+
+<div class="small-8 columns">
+
+  {% for empleado in empleado_list %}
+  <div class="row">
+    <div class="callout primary small-12 columns">
+      <h5>{{ empleado.nombre }} {{ empleado.apellidos }}</h5>
+      <p>Tel&etilde;fono: {{ empleado.telefono }}</p>
+      <p>Email: {{ empleado.correo }}</p>
+      <a class="button" href="/edit_empleado/?id={{empleado.id}}">Editar</a> <a class="button alert" href="/delete_empleado/?id={{empleado.id}}">Eliminar</a>
+    </div>
+  </div>
+
+  {% empty %}
+  <div class="row">
+    <div class="callout alert small-12 columns">
+      <h5>No hay usuarios registrados</h5>
+      <p>Para registrar usuarios utiliza la p&atilde;gina de <a href="">registro</a>.</p>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+<div class="small-2 columns"> <a href=""><img src="http://www.freeiconspng.com/uploads/settings-icon-6.png" width="70" height="70"/></a> </div>
+
+{% endblock %}

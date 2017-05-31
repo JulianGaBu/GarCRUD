@@ -6,12 +6,12 @@
 
 <div class="small-8 columns">
 
-  {% for site in site_list %}
+  {% for sitio in sitio_list %}
   <div class="row">
     <div class="callout primary small-12 columns">
-      <h5>{{ site.nombre }}</h5>
-      <p>{{ site.direccion }}</p>
-      <a class="button" href="/edit_site/?id={{site.id}}">Editar</a> <a class="button alert" href="/eliminar_site/?id={{site.id}}">Eliminar</a>
+      <h5>{{ sitio.nombre }}</h5>
+      <p>{{ sitio.direccion }}</p>
+      <a class="button" href="/edit_sitio/?id={{sitio.id}}">Editar</a> <a class="button alert" href="/delete_sitio/?id={{sitio.id}}">Eliminar</a>
     </div>
   </div>
 

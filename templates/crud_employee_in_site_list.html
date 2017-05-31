@@ -6,13 +6,12 @@
 
 <div class="small-8 columns">
 
-  {% for employee in employee_list %}
+  {% for empleado in empleado_list %}
   <div class="row">
     <div class="callout primary small-12 columns">
-      <h5>{{ employee.name }} {{ employee.lastname }}</h5>
-      <p>Tel&etilde;fono: {{ employe.tel }}</p>
-      <p>Email: {{ employe.mail }}</p>
-      <a href="">It's dangerous to go alone, take this.</a>
+      <h5>{{ empleado.nombre }} {{ empleado.apellido }}</h5>
+      <p>Tel&etilde;fono: {{ employe.telefono }}</p>
+      <p>Email: {{ employe.correo }}</p>
     </div>
   </div>
 
@@ -20,7 +19,7 @@
   <div class="row">
     <div class="callout alert small-12 columns">
       <h5>No hay empleados registrados en el sitio</h5>
-      <p>Para registrar usuarios utiliza la p&atilde;gina de <a href="">registro</a>.</p>
+      <p>Para registrar empleados utiliza la p&atilde;gina de <a href="">registro</a>.</p>
     </div>
   </div>
 
