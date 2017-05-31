@@ -1,0 +1,32 @@
+{% extends "crud_base.html" %}
+{% block title %}Sitios{% endblock %}
+{% block pagetitle %}Listado de sitios{% blockend %}
+{% block body %}
+<div class="small-2 columns"> &nbsp; </div>
+
+<div class="small-8 columns">
+
+  {% for site in site_list %}
+  <div class="row">
+    <div class="callout primary small-12 columns">
+      <h5>{{ site.name }}</h5>
+      <p>{{ site.dir }}</p>
+      <a href="">It's dangerous to go alone, take this.</a>
+    </div>
+  </div>
+
+  {% empty %}
+  <div class="row">
+    <div class="callout alert small-12 columns">
+      <h5>No hay sitios registrados</h5>
+      <p>Para registrar sitios utiliza la p&atilde;gina de <a href="">registro</a>.</p>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+<div class="small-2 columns"> <a href=""><img src="cog.png" width="70" height="70"/></a> </div>
+
+{% blockend %}

@@ -1,0 +1,23 @@
+<html>
+
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <!-- If you delete this meta tag World War Z will become a reality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css"/>
+</head>
+
+<body>
+
+<div class ="row">
+  <h1 class ="small-10 small-offset-2 column">{% block pagetitle %}{% endblock %}</h1>
+</div>
+
+<div class="row">
+  {% block body %}
+  {% blockend %}
+</div>
+
+</body>
+
+</html>

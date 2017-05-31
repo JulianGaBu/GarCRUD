@@ -1,0 +1,33 @@
+{% extends "crud_base.html" %}
+{% block title %}Empleados de {{ site_name }}{% endblock %}
+{% block pagetitle %}Listado de empleados{% blockend %}
+{% block body %}
+<div class="small-2 columns"> &nbsp; </div>
+
+<div class="small-8 columns">
+
+  {% for employee in employee_list %}
+  <div class="row">
+    <div class="callout primary small-12 columns">
+      <h5>{{ employee.name }} {{ employee.lastname }}</h5>
+      <p>Tel&etilde;fono: {{ employe.tel }}</p>
+      <p>Email: {{ employe.mail }}</p>
+      <a href="">It's dangerous to go alone, take this.</a>
+    </div>
+  </div>
+
+  {% empty %}
+  <div class="row">
+    <div class="callout alert small-12 columns">
+      <h5>No hay empleados registrados en el sitio</h5>
+      <p>Para registrar usuarios utiliza la p&atilde;gina de <a href="">registro</a>.</p>
+    </div>
+  </div>
+
+  {% endfor %}
+
+</div>
+
+<div class="small-2 columns"> <a href=""><img src="cog.png" width="70" height="70"/></a> </div>
+
+{% blockend %}
