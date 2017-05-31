@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from mysite.views import current_datetime
+from CRUD import views
 
 urlpatterns = [
     #mysite
     url(r'^mysite/', current_datetime),
     url(r'^admin/', admin.site.urls),
+    url(r'^sitios/', views.view_sitios),
+    url(r'^sitios-edit/', views.sitios_edit),
 ]
