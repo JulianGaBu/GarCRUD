@@ -19,7 +19,7 @@
 <div class="row">
   <div class="small-12 columns">
     <label>Nombre
-      <input name="site_name" type="text" placeholder="Walook" required>
+      <input name="site_name" type="text" placeholder="Walook" required value="{% block name %} {% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
@@ -28,7 +28,7 @@
 
   <div class="small-12 columns">
     <label>Direcci&oacute;n
-      <input name="site_dir" type="text" placeholder="Calle 45b No 338 entre 44 y 46 Pensiones" required>
+      <input name="site_dir" type="text" placeholder="Calle 45b No 338 entre 44 y 46 Pensiones" required value="{% block dir %} {% endblock %}">
       <span class="form-error">
         Campo requerido.
       </span>
