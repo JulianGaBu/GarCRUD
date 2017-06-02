@@ -32,4 +32,5 @@ urlpatterns = [
     url(r'^delete_sitio/id=(\d{1,2})', views.sitios_delete),
     url(r'^crear_empleado_form/id=(\d{1,2})', views.crear_empleado_sitio_form),
     url(r'^create_employee/', views.crear_empleado_sitio),
+    url(r'^delete_empleado/id=(\d{1,2})/site_id=(\d{1,2})', views.eliminar_empleado)
 ]

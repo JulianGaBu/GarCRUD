@@ -30,12 +30,12 @@ def crear_empleado_sitio(request):
     employee.save()
     sitio.empleados.add(employee)
     sitio.save()
-    return render_to_response('redirect_sites.html')
+    return render_to_response('redirect_employees.html', {'site': sitio})
 
 
 def sitios_edit(request, id):
     sitio = Sitio.objects.get(id=id)
-    return render_to_response('crud_update_site.html', {'sitio':sitio})
+    return render_to_response('crud_update_site.html', {'sitio': sitio})
 
 def sitios_delete(request, id):
     sitio = Sitio.objects.get(id=id)
@@ -60,3 +60,12 @@ def create_site(request):
         site.save()
     #todo js response
     return render_to_response('redirect_sites.html')
+
+def eliminar_empleado(request, em_id, site_id):
+    empleado = Empleado.objects.get(id=em_id)
+    empleado.delete()
+    return render_to_response('redirect_employees.html', {'site': Sitio.objects.get(id=site_id)})
+
+def editar_empleado(request, em_id):
+    empleado = Empleado.objects.get(id=em_id)
+    return render_to_response('crud_update_employee.html', {'empleado':empleado})
