@@ -8,7 +8,7 @@
 
   {% for sitio in sitio_list %}
   <div class="row">
-    <div class="callout primary small-12 columns">
+    <div class="callout primary small-12 columns" draggable="true">
       <h5>{{ sitio.nombre }}</h5>
       <p>{{ sitio.direccion }}</p>
       <a class="button" href="/edit_sitio/id={{sitio.id}}">Editar</a> <a class="button" href="/empleados_sitio/id={{sitio.id}}">Ver lista de empleados</a> <a class="button alert" href="/delete_sitio/id={{sitio.id}}">Eliminar</a>
@@ -29,4 +29,18 @@
 
 <div class="small-2 columns"> <a href="/crear_sitio_form/"><img src="http://www.freeiconspng.com/uploads/settings-icon-6.png" width="70" height="70" alt="Añadir un sitio"/></a> </div>
 
+{% endblock %}
+
+{% block javascript %}
+  $(document).ready(function(){
+    document.querySelectorAll('.callout');
+      [].forEach.call(cols, function(col) {
+        col.addEventListener('dragstart', handleDragStart, false);
+      });
+    }
+  });
+
+  function handleDragStart(e) {
+    this.style.opacity = '0.4';  // this / e.target is the source node.
+  }
 {% endblock %}

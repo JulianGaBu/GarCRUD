@@ -1,0 +1,53 @@
+<html>
+<head><title>Test</title></head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+  MAX_FILE_SIZE = 5242880;
+
+  $(document).ready(function(){
+
+    $('#fileUpload').change( function() {
+
+      if(isFileOverLimit(this)){
+        alert("Archivo pasado");
+        this.value = "";
+      }
+    });
+
+    $('form[name=form]').submit(function(){
+
+      if(isFileOverLimit($('#fileUpload'))){
+        alert("Archivo pasado");
+        return false;
+      }
+
+      return true;
+    });
+  });
+
+  function isFileOverLimit(file){
+
+    //Check for full File API support.
+    if ( window.FileReader && window.File && window.FileList && window.Blob ) {
+
+      return file.files[0].size > MAX_FILE_SIZE;
+    } else {
+
+      //No support, always let the file go through
+      return true
+    }
+  }
+</script>
+
+
+<body>
+
+<form name="form" enctype="multipart/form-data" action="/nep/" method="post">
+
+  <input id="fileUpload" name="archivito" type="file"/>
+  <input type="submit">
+</body>
+</html>
